@@ -18,16 +18,16 @@ public class Retiros extends Cliente{
         this.cantidad_Retiro = cantidad_Retiro;
     }
 
-    public void retirarDinero(){
+    public void retirarDinero( double monto){
         Scanner sc = new Scanner(System.in);
-        System.out.println("Ingrese la cantidad que desea retirar de su cuenta: ");
-        cantidad_Retiro = sc.nextDouble();
-
-        while (cantidad_Retiro >= Monto){
+        System.out.println("Usted actual mente cuenta con $" + monto);
+        System.out.println("Ingrese la cantidad de dinero que va a retirar: ");
+        cantidad_Retiro = (sc.nextDouble());
+        while (cantidad_Retiro >= monto){
             System.out.println("El cuenta NO tiene el suficiente monto para realizar esta accion");
             cantidad_Retiro = sc.nextDouble();
         }
-        Monto = Monto - cantidad_Retiro;
+        Monto = monto - cantidad_Retiro;
         System.out.println("Retiro realizado con exito\nEl total de tu cuenta ahora es de " + Monto);
     }
 }

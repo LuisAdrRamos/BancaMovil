@@ -10,6 +10,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Cliente cliente = new Cliente("Adrian04","12345",200404,1756175558,520);
+        double monto = cliente.getMonto();
 
         Depositos deposito = new Depositos();
         Retiros retiro = new Retiros();
@@ -24,14 +25,14 @@ public class Main {
         switch (op) {
             case 1:
                 System.out.println("\tDEPOSITOS");
-                System.out.println("Ingrese la cantidad de va a depositar a su cuenta: ");
-                deposito.setCant_Deposito(sc.nextDouble());
-                deposito.depositarDinero();
-
+                deposito.depositarDinero(monto);
                 break;
             case 2:
+                System.out.println("\tRETIROS");
+                retiro.retirarDinero(monto);
                 break;
             case 3:
+                System.out.println("\tTRANSFERENCIAS");
 
                 break;
             case 4:

@@ -18,12 +18,12 @@ public class Depositos extends Cliente{
         Cant_Deposito = cant_Deposito;
     }
 
-    public double getMonto() {
-        return super.getMonto();
-    }
-
-    public void depositarDinero() {
-        Monto = getMonto() + Cant_Deposito;
+    public void depositarDinero(double monto) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Usted actual mente cuenta con $" + monto);
+        System.out.println("Ingrese la cantidad de va a depositar a su cuenta: ");
+        Cant_Deposito = (sc.nextDouble());
+        Monto = monto + Cant_Deposito;
         System.out.println("Gracias por su deposito\nSu monto ahora es de $" + Monto);
     }
 }
