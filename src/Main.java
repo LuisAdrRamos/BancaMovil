@@ -33,9 +33,10 @@ public class Main {
                 break;
             case 3:
                 System.out.println("\tTRANSFERENCIAS");
-
+                transferencia.transfeririDinero(monto);
                 break;
             case 4:
+                System.out.println("\tPAGOS DE SERVICIOS");
 
                 break;
             case 5:

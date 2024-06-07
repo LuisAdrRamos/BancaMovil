@@ -25,6 +25,7 @@ public class Retiros extends Cliente{
         cantidad_Retiro = (sc.nextDouble());
         while (cantidad_Retiro >= monto){
             System.out.println("El cuenta NO tiene el suficiente monto para realizar esta accion");
+            System.out.println("Ingrese la cantidad de nuevo: ");
             cantidad_Retiro = sc.nextDouble();
         }
         Monto = monto - cantidad_Retiro;
