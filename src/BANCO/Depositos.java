@@ -2,8 +2,9 @@ package BANCO;
 import java.util.Scanner;
 public class Depositos extends Cliente{
     double Cant_Deposito;
-
-    public Depositos() {
+    Cliente cliente;
+    public Depositos(Cliente cliente) {
+        this.cliente = cliente;
     }
 
     public Depositos(double cant_Deposito) {
@@ -18,13 +19,13 @@ public class Depositos extends Cliente{
         Cant_Deposito = cant_Deposito;
     }
 
-    public void depositarDinero(double monto) {
+    public void depositarDinero() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Usted actual mente cuenta con $" + monto);
+        System.out.println("Usted actual mente cuenta con $" + cliente.getMonto());
         System.out.println("Ingrese la cantidad de va a depositar a su cuenta: ");
         Cant_Deposito = (sc.nextDouble());
-        Monto = monto + Cant_Deposito;
-        System.out.println("Gracias por su deposito\nSu monto ahora es de $" + Monto);
+        cliente.setMonto(cliente.getMonto() + Cant_Deposito);
+        System.out.println("Gracias por su deposito\nSu monto ahora es de $" + cliente.getMonto());
     }
 }
 
